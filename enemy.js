@@ -58,4 +58,7 @@ class Enemy
 	}
 }
 
-class 
+class EnemyController
+{
+	
+}
