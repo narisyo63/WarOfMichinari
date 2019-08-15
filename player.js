@@ -6,6 +6,7 @@ class Player{
 		this.x=x;
 		this.y=y;
 		this.HP=100;
+		this.damege=20;
 
 		this.ArrowUp=this.ArrowDown=this.ArrowRight=this.ArrowLeft=false;
 		this.Space=false;
