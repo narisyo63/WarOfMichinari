@@ -1,5 +1,5 @@
 window.onload=init_time; //最初にロードされる
-var id=window.setInterval(update,10); //アップロードされる
+var id=window.setInterval(update,50); //アップロードされる
 
 var player;
 var stage;
