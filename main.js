@@ -13,9 +13,9 @@ function init_time()
 	var enemy_image = "img/enemy.png";
 	var fgcolor = "lightgreen";
 	var bgcolor = "paleturquoise";
-	var loadcolor = "sienna";
+	var ldcolor = "sienna";
 
-	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor);
+	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 	for(var i = 0; i < 3; i++){
 		enemy[i] = new Enemy(canvas, enemy_image, 150, 250, i);
 		enemy[i] = new Enemy(canvas, enemy_image, 180, 250, i);
