@@ -16,7 +16,7 @@ function init_time()
 	var ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
-	enemy = new Enemy(canvas, enemy_image, 150, 250);
+	enemy = new Enemy(canvas, enemy_image, 50, 350);
 	player = new Player(canvas, player_image, 350, 250);
 	money=new Money(canvas);
 
@@ -51,7 +51,7 @@ function update()
 	for(var i = 0; i < 3; i++){
 		if(enemy.setActive){
 			enemy.showImage(player.x,player.y);
-			enemy.move(player.x,player.y);
+			enemy.move(player);
 		}
 		enemy.hitJudge(player);
 	}
