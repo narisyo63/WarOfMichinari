@@ -56,8 +56,3 @@ class Enemy
 		}
 	}
 }
-
-class EnemyMoney
-{
-
-}
