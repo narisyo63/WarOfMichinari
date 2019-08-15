@@ -32,14 +32,17 @@ function update()
 	stage.draw_canvas();
 
 	//player
-	if(player.HP>0){
-		player.showImage();
-		player.move();
-		for(var i=0; i<enemy.length;i++){
-			player.hitJudge(enemy[i]);
-		}
-	}
+	// if(player.HP>0){
+		// player.showImage();
+		// player.move();
+		// for(var i=0; i<enemy.length;i++){
+			// player.hitJudge(enemy[i]);
+		// }
+	// }
 	//player.showHP();
+	player.showImage();
+	player.move();
+
 
 
 
