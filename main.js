@@ -46,11 +46,11 @@ function update()
 
 	//enemy
 	for(var i = 0; i < 3; i++){
-		if(enemy[i].setActive){
-			enemy[i].showImage(player.x,player.y);
-			enemy[i].move(player.x,player.y);
+		if(enemy.setActive){
+			enemy.showImage(player.x,player.y);
+			enemy.move(player.x,player.y);
 		}
-		enemy[i].hitJudge(player);
+		enemy.hitJudge(player);
 	}
 
 
