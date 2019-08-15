@@ -45,7 +45,15 @@ function update()
 	// }
 	//player.showHP();
 	player.showImage();
-	player.move();
+
+	for(var i=0; i<enemy.length;i++){
+		if(!player.hitJudge(enemy[i])){
+			player.move();
+		}
+	}
+
+	console.log(!player.hitJudge(enemy[i]));
+
 
 
 
