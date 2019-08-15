@@ -22,7 +22,7 @@ function init_time()
 		enemy[i] = new Enemy(canvas, enemy_image, 120, 250, i);
 	}
 	player = new Player(canvas, player_image, 350, 250);
-	money=new Money(canvas,10000);
+	money=new Money(canvas);
 
 }
 
