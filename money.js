@@ -1,5 +1,6 @@
 class Money{
 	constructor(canvas,value){
+		this.canvas=canvas;
 		this.value=value;
 	}
 
