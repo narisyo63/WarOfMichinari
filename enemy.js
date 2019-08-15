@@ -10,17 +10,18 @@ class Enemy
 		this.y = this.initY;
 
 		this.readImage(image);
-		this.HP = 1;
+		this.HP = 100;
 		this.setActive = true;
 		this.rd;
 		this.speed=1;
 		this.moveEnemy = true;
+		this.damage=1;
 	}
 
 	init(){
 		this.x = this.X;
 		this.y = this.Y;
-		this.HP = 1;
+		this.HP = 100;
 		this.setActive = true;
 	}
 
@@ -37,8 +38,8 @@ class Enemy
 	hitJudge(player){//敵との当たり判定
 		var distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 		if(distance<50 && player.imageChangeNumber == 1){
-			this.HP-=1;
-			if(this.HP < 0){
+			this.HP-=player.damage;
+			if(this.HP <= 0){
 				this.setActive = false;
 			}	
 		}
