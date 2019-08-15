@@ -20,6 +20,6 @@ class Stage
         this.canvas.fillRect(0, 0, this.x, this.y - 100);
 
         this.canvas.fillStyle=this.ldcolor;
-        this.canvas.fillRect(0, 200, this.x, this.y - 400);
+        this.canvas.fillRect(0, 300, this.x, this.y - 400);
     }
 }
