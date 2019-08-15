@@ -37,8 +37,8 @@ class Player{
 		}
 	}
 
-	move(){//playerの動き(キー操作)
-
+	move(){//playerの動き
+		this.x-=1;
 	}
 
 }
