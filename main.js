@@ -18,7 +18,7 @@ function init_time()
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
-	player = new Player(canvas, player_image, 600, 350);
+	player = new Player(canvas, player_image, 650, 350);
 	money=new Money(canvas);
 
 }
