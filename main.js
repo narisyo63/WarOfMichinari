@@ -33,7 +33,9 @@ function update()
 	stage.draw_canvas();
 
 	//player
-	player.showImage();
+	if(player.HP>0){
+		player.showImage();
+	}
 
 	if(!player.hitJudge(enemy)){
 		player.move();
