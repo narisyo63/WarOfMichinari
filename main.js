@@ -29,8 +29,8 @@ function update()
 {
 
 
-	document.onkeydown=keydown;
-	document.onkeyup=keyup;
+	// document.onkeydown=keydown;
+	// document.onkeyup=keyup;
 
 	stage.draw_canvas();
 
@@ -58,21 +58,21 @@ function update()
 }
 
 
-function keydown(event){
-	if(event.keyCode==38){player.ArrowUp=true;}
-	if(event.keyCode==40){player.ArrowDown=true;}
-	if(event.keyCode==39){player.ArrowRight=true;}
-	if(event.keyCode==37){player.ArrowLeft=true;}
-	if(event.keyCode==32){player.Space=true;}
-}
+// function keydown(event){
+	// if(event.keyCode==38){player.ArrowUp=true;}
+	// if(event.keyCode==40){player.ArrowDown=true;}
+	// if(event.keyCode==39){player.ArrowRight=true;}
+	// if(event.keyCode==37){player.ArrowLeft=true;}
+	// if(event.keyCode==32){player.Space=true;}
+// }
 
-function keyup(event){
-	if(event.keyCode==38){player.ArrowUp=false;}
-	if(event.keyCode==40){player.ArrowDown=false;}
-	if(event.keyCode==39){player.ArrowRight=false;}
-	if(event.keyCode==37){player.ArrowLeft=false;}
-	if(event.keyCode==32){player.Space=false;}
-}
+// function keyup(event){
+	// if(event.keyCode==38){player.ArrowUp=false;}
+	// if(event.keyCode==40){player.ArrowDown=false;}
+	// if(event.keyCode==39){player.ArrowRight=false;}
+	// if(event.keyCode==37){player.ArrowLeft=false;}
+	// if(event.keyCode==32){player.Space=false;}
+// }
 
 
 
