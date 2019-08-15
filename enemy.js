@@ -14,6 +14,7 @@ class Enemy
 		this.setActive = true;
 		this.rd;
 		this.speed=1;
+		this.moveEnemy = true;
 	}
 
 	init(){
@@ -45,9 +46,14 @@ class Enemy
 			this.init();
 		}
 	}
-	move(px, py)
+	move(player)
 	{
-		this.x+=0.5*this.speed;
+		var distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
+		if(distance<=50){
+			this.moveEnemy = false;
+		}else{
+			this.x+=0.5*this.speed;
+		}
 	}
 }
 
