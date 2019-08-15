@@ -7,6 +7,6 @@ class Money{
 	drawMoneyValue(){
 		this.canvas.fillStyle="black";
 		this.canvas.font="48px serif";
-		this.canvas.fillText(this.value+"円",400,50);
+		this.canvas.fillText(this.value+"円",480,50);
 	}
 }
