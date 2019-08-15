@@ -37,6 +37,8 @@ function update()
 
 	if(!player.hitJudge(enemy)){
 		player.move();
+	}else{
+		player.attack();
 	}
 
 
