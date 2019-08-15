@@ -1,7 +1,7 @@
 class Money{
-	constructor(canvas,value){
+	constructor(canvas){
 		this.canvas=canvas;
-		this.value=value;
+		this.value=0;
 	}
 
 	drawMoneyValue(){
