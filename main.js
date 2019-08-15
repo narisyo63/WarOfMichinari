@@ -16,11 +16,7 @@ function init_time()
 	var ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
-	for(var i = 0; i < 3; i++){
-		enemy[i] = new Enemy(canvas, enemy_image, 150, 250, i);
-		enemy[i] = new Enemy(canvas, enemy_image, 180, 250, i);
-		enemy[i] = new Enemy(canvas, enemy_image, 120, 250, i);
-	}
+	enemy = new Enemy(canvas, enemy_image, 150, 250);
 	player = new Player(canvas, player_image, 350, 250);
 
 }
