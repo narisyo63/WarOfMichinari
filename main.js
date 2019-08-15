@@ -16,7 +16,11 @@ function init_time()
 	var ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
+<<<<<<< HEAD
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
+=======
+	enemy = new Enemy(canvas, enemy_image, 150, 250);
+>>>>>>> 792b0ed89239f1dfc572dd16f57597fbd5890d9c
 	player = new Player(canvas, player_image, 600, 350);
 	money=new Money(canvas);
 
