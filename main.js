@@ -18,6 +18,7 @@ function init_time()
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 	enemy = new Enemy(canvas, enemy_image, 150, 250);
 	player = new Player(canvas, player_image, 350, 250);
+	money=new Money(canvas,10000);
 
 }
 
@@ -25,8 +26,8 @@ function update()
 {
 
 
-	document.onkeydown=keydown;
-	document.onkeyup=keyup;
+	// document.onkeydown=keydown;
+	// document.onkeyup=keyup;
 
 	stage.draw_canvas();
 
@@ -38,7 +39,7 @@ function update()
 			player.hitJudge(enemy[i]);
 		}
 	}
-	player.showHP();
+	//player.showHP();
 
 
 
@@ -51,24 +52,32 @@ function update()
 		}
 		enemy[i].hitJudge(player);
 	}
+
+
+
+
+	//money
+	money.drawMoneyValue();
+
+
 }
 
 
-function keydown(event){
-	if(event.keyCode==38){player.ArrowUp=true;}
-	if(event.keyCode==40){player.ArrowDown=true;}
-	if(event.keyCode==39){player.ArrowRight=true;}
-	if(event.keyCode==37){player.ArrowLeft=true;}
-	if(event.keyCode==32){player.Space=true;}
-}
+// function keydown(event){
+	// if(event.keyCode==38){player.ArrowUp=true;}
+	// if(event.keyCode==40){player.ArrowDown=true;}
+	// if(event.keyCode==39){player.ArrowRight=true;}
+	// if(event.keyCode==37){player.ArrowLeft=true;}
+	// if(event.keyCode==32){player.Space=true;}
+// }
 
-function keyup(event){
-	if(event.keyCode==38){player.ArrowUp=false;}
-	if(event.keyCode==40){player.ArrowDown=false;}
-	if(event.keyCode==39){player.ArrowRight=false;}
-	if(event.keyCode==37){player.ArrowLeft=false;}
-	if(event.keyCode==32){player.Space=false;}
-}
+// function keyup(event){
+	// if(event.keyCode==38){player.ArrowUp=false;}
+	// if(event.keyCode==40){player.ArrowDown=false;}
+	// if(event.keyCode==39){player.ArrowRight=false;}
+	// if(event.keyCode==37){player.ArrowLeft=false;}
+	// if(event.keyCode==32){player.Space=false;}
+// }
 
 
 
