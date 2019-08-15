@@ -12,7 +12,8 @@ function init_time()
 	var player_image = ["img/player.png","img/player_attack.png"];
 	var enemy_image = "img/enemy.png";
 	var fgcolor = "lightgreen";
-	var bgcolor = "black";
+	var bgcolor = "paleturquoise";
+	var loadcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor);
 	for(var i = 0; i < 3; i++){
