@@ -52,7 +52,7 @@ class Enemy
 		if(distance<=50){
 			this.moveEnemy = false;
 		}else{
-			this.x+=0.5*this.speed;
+			this.x+=1*this.speed;
 		}
 	}
 }
