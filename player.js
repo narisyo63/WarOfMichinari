@@ -41,7 +41,7 @@ class Player{
 	}
 
 	move(){//playerの動き
-		this.x-=5;
+		this.x-=1;
 	}
 
 }
