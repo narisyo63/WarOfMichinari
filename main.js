@@ -14,7 +14,7 @@ function init_time()
 	const player_image = ["img/player.png","img/player_attack.png"];
 	const enemy_image = "img/enemy.png";
 	const fgcolor = "lightgreen";
-	const bgcolor = "paconsturquoise";
+	const bgcolor = "skyblue";
 	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
