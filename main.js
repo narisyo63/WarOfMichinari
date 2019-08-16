@@ -1,7 +1,7 @@
 window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
-let player;
+let player1;
 let enemy;
 let stage;
 let money;
@@ -11,8 +11,8 @@ function init_time()
 	const cvs = document.getElementById("canvas");
 	const canvas = cvs.getContext("2d");
 
-	const player_image = ["img/player.png","img/player_attack.png"];
-	const player_castle_image = "img/player_castle.png";
+	const player1_image = ["img/player1.png","img/player1_attack.png"];
+	const player1_castle_image = "img/player1_castle.png";
 	const enemy_image = "img/enemy.png";
 	const fgcolor = "lightgreen";
 	const bgcolor = "skyblue";
@@ -21,7 +21,7 @@ function init_time()
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
-	player = new Player1(canvas, player_image, player_castle_image, 650, 350);
+	player1 = new Player1(canvas, player1_image, player1_castle_image, 650, 350);
 	money=new Money(canvas);
 
 }
@@ -35,15 +35,15 @@ function update()
 
 	stage.draw_canvas();
 
-	//player
-	if(player.HP>0){
-		player.showImage();
+	//player1
+	if(player1.HP>0){
+		player1.showImage();
 	}
 
-	if(!player.hitJudge(enemy)){
-		player.move();
+	if(!player1.hitJudge(enemy)){
+		player1.move(player1.speed);
 	}else{
-		player.attack();
+		player1.attack();
 	}
 
 
@@ -54,12 +54,12 @@ function update()
 
 	//enemy
 	if(enemy.hp>0){
-		enemy.showImage(player.x,player.y);
-		enemy.move(player);
+		enemy.showImage(player1.x,player1.y);
+		enemy.move(player1);
 	}else{
 		enemy.setActive = false;
 	}
-	enemy.hitJudge(player);
+	enemy.hitJudge(player1);
 
 
 
@@ -72,19 +72,19 @@ function update()
 
 
 // function keydown(event){
-	// if(event.keyCode==38){player.ArrowUp=true;}
-	// if(event.keyCode==40){player.ArrowDown=true;}
-	// if(event.keyCode==39){player.ArrowRight=true;}
-	// if(event.keyCode==37){player.ArrowLeft=true;}
-	// if(event.keyCode==32){player.Space=true;}
+	// if(event.keyCode==38){player1.ArrowUp=true;}
+	// if(event.keyCode==40){player1.ArrowDown=true;}
+	// if(event.keyCode==39){player1.ArrowRight=true;}
+	// if(event.keyCode==37){player1.ArrowLeft=true;}
+	// if(event.keyCode==32){player1.Space=true;}
 // }
 
 // function keyup(event){
-	// if(event.keyCode==38){player.ArrowUp=false;}
-	// if(event.keyCode==40){player.ArrowDown=false;}
-	// if(event.keyCode==39){player.ArrowRight=false;}
-	// if(event.keyCode==37){player.ArrowLeft=false;}
-	// if(event.keyCode==32){player.Space=false;}
+	// if(event.keyCode==38){player1.ArrowUp=false;}
+	// if(event.keyCode==40){player1.ArrowDown=false;}
+	// if(event.keyCode==39){player1.ArrowRight=false;}
+	// if(event.keyCode==37){player1.ArrowLeft=false;}
+	// if(event.keyCode==32){player1.Space=false;}
 // }
 
 
