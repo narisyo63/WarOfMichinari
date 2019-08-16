@@ -36,7 +36,7 @@ class Enemy
 	}
 
 	hitJudge(player){//敵との当たり判定
-		var distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
+		let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 		if(distance<50){
 			this.HP-=player.damage;
 		}
@@ -46,7 +46,7 @@ class Enemy
 	}
 	move(player)
 	{
-		var distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
+		let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 		if(distance<=50){
 			this.moveEnemy = false;
 		}else{
