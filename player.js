@@ -5,8 +5,8 @@ class Player{
 		this.y=y;
 	}
 
-	move(){//playerの動き
-		this.x-=1;
+	move(speed){//playerの動き
+		this.x-=speed;
 	}
 
 }
@@ -18,6 +18,7 @@ class Player1 extends Player{
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
 		this.castle_image;
+		this.speed=1;
 		this.HP=100;
 		this.damage=20;
 
