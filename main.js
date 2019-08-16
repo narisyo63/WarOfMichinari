@@ -1,12 +1,7 @@
 window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
-<<<<<<< HEAD
 let player1;
-=======
-let player;
-let enemyControllar;
->>>>>>> 5266aebc76cd641358ae2dd9498afbfa285de4fe
 let enemy;
 let stage;
 let money;
