@@ -13,7 +13,7 @@ class Enemy
 
 		this.readImage(image);
 		this.hp = HP;
-		this.setActive = true;
+		this.setActive = false;
 		this.rd;
 		this.speed=1;
 		this.moveEnemy = true;
@@ -33,7 +33,6 @@ class Enemy
 
 	hitJudge(player){//敵との当たり判定
 		let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
-		console.log(this.hp);
 		if(distance<=50){
 			this.hp-=player.damage;
 		}
@@ -53,5 +52,21 @@ class EnemyController
 {
 	constructor(canvas,image,x,y){
 		this.enemyData = new Enemy(canvas,image,x,y);
+	}
+
+	generator(){
+		console.log(this.enemyData.setActive);
+		this.enemyData.setActive = true;
+
+		if(enemy.hp>0){
+			this.enemyData.hitJudge(player1);
+			this.enemyData.showImage(player1.x,player1.y);
+			this.enemyData.move(player1);
+		}else{
+			this.enemyData.setActive = false;
+			delete this.enemyData;
+		}
+		
+	
 	}
 }
