@@ -24,10 +24,10 @@ class Player1 extends Player{
 		this.ArrowUp=this.ArrowDown=this.ArrowRight=this.ArrowLeft=false;
 		this.Space=false;
 
-		this.readImage(image,castle_image);
+		this.readImage(image);
 	}
 
-	readImage(image,castle_image){//画像の読み込み
+	readImage(image){//画像の読み込み
 		for(let i=0;i<image.length;i++){
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
