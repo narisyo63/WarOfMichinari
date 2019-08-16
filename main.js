@@ -12,6 +12,7 @@ function init_time()
 	const canvas = cvs.getContext("2d");
 
 	const player_image = ["img/player.png","img/player_attack.png"];
+	const player_castle_image = "img/player_castle.png";
 	const enemy_image = "img/enemy.png";
 	const fgcolor = "lightgreen";
 	const bgcolor = "skyblue";
@@ -20,7 +21,7 @@ function init_time()
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
-	player = new Player(canvas, player_image, 650, 350);
+	player = new Player(canvas, player_image, player_castle_image, 650, 350);
 	money=new Money(canvas);
 
 }

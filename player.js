@@ -1,8 +1,9 @@
 class Player{
-	constructor(canvas,image,x,y){
+	constructor(canvas,image,castle_image,x,y){
 		this.canvas=canvas;
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
+		this.castle_image;
 		this.x=x;
 		this.y=y;
 		this.HP=100;
@@ -11,17 +12,20 @@ class Player{
 		this.ArrowUp=this.ArrowDown=this.ArrowRight=this.ArrowLeft=false;
 		this.Space=false;
 
-		this.readImage(image);
+		this.readImage(image,castle_image);
 	}
 
-	readImage(image){//画像の読み込み
+	readImage(image,castle_image){//画像の読み込み
 		for(let i=0;i<image.length;i++){
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
 		}
+		this.castle_image=new Image();
+		this.castle_image.src=castle_image;
 	}
 
 	showImage(){//画像の表示
+		this.canvas.drawImage(this.castle_image,600,275,100,100);
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
