@@ -1,6 +1,13 @@
 class Player{
-	constructor(canvas,image,castle_image,x,y){
+	constructor(canvas){
 		this.canvas=canvas;
+	}
+
+}
+
+class Player1 extends Player{
+	constructor(canvas,image,castle_image,x,y){
+		super(canvas);
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
 		this.castle_image;
@@ -25,7 +32,7 @@ class Player{
 	}
 
 	showImage(){//画像の表示
-		this.canvas.drawImage(this.castle_image,600,275,100,100);
+		this.canvas.drawImage(this.castle_image,550,225,150,150);
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
@@ -58,3 +65,12 @@ class Player{
 	}
 
 }
+
+
+
+
+
+
+
+
+
