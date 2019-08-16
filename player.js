@@ -1,6 +1,13 @@
 class Player{
-	constructor(canvas,image,castle_image,x,y){
+	constructor(canvas){
 		this.canvas=canvas;
+	}
+
+}
+
+class Player1 extends Player{
+	constructor(canvas,image,castle_image,x,y){
+		super(canvas);
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
 		this.castle_image;
@@ -58,3 +65,12 @@ class Player{
 	}
 
 }
+
+
+
+
+
+
+
+
+
