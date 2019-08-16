@@ -1,19 +1,21 @@
 window.onload=init_time; //最初にロードされる
-var id=window.setInterval(update,50); //アップロードされる
+const id=window.setInterval(update,50); //アップロードされる
 
-var player;
-var stage;
-var enemy;
+let player;
+let enemy;
+let stage;
+let money;
 
 function init_time()
 {
-	var canvas = document.getElementById("canvas").getContext("2d");;
+	const cvs = document.getElementById("canvas");
+	const canvas = cvs.getContext("2d");
 
-	var player_image = ["img/player.png","img/player_attack.png"];
-	var enemy_image = "img/enemy.png";
-	var fgcolor = "lightgreen";
-	var bgcolor = "paleturquoise";
-	var ldcolor = "sienna";
+	const player_image = ["img/player.png","img/player_attack.png"];
+	const enemy_image = "img/enemy.png";
+	const fgcolor = "lightgreen";
+	const bgcolor = "paconsturquoise";
+	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
