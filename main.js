@@ -35,7 +35,7 @@ function update()
 	stage.draw_canvas();
 
 	//player
-	if(player.hp>0){
+	if(player.HP>0){
 		player.showImage();
 	}
 
