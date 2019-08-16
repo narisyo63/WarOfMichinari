@@ -15,7 +15,7 @@ class Player{
 	}
 
 	readImage(image){//画像の読み込み
-		for(var i=0;i<image.length;i++){
+		for(let i=0;i<image.length;i++){
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
 		}
@@ -32,7 +32,7 @@ class Player{
 	}
 
 	hitJudge(enemy){//敵との当たり判定
-		var distance=Math.sqrt((enemy.x-this.x)**2+(enemy.y-this.y)**2);
+		let distance=Math.sqrt((enemy.x-this.x)**2+(enemy.y-this.y)**2);
 		if(distance<=50){
 			this.HP-=enemy.damage;
 			return true;
