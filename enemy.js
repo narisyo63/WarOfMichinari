@@ -1,27 +1,30 @@
 class Enemy
 {
 	constructor(canvas,image,x,y){
+		const HP = 100;
+		const X = x;
+		const Y = y;
+
 		this.canvas=canvas;
 		this.image=new Image();
-		this.initX=x;
-		this.initY=y;
 
-		this.x = this.initX;
-		this.y = this.initY;
+		this.x = X;
+		this.y = Y;
 
 		this.readImage(image);
-		this.HP = 100;
+		this.hp = HP;
 		this.setActive = true;
 		this.rd;
 		this.speed=1;
 		this.moveEnemy = true;
 		this.damage=1;
+
 	}
 
 	init(){
 		this.x = this.X;
 		this.y = this.Y;
-		this.HP = 100;
+		this.hp = HP;
 		this.setActive = true;
 	}
 
@@ -37,9 +40,9 @@ class Enemy
 
 	hitJudge(player){//敵との当たり判定
 		let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
-		console.log(distance);
+		console.log(this.setActive + this.hp);
 		if(distance<=50){
-			this.HP-=player.damage;
+			this.hp-=player.damage;
 		}
 		if(this.setActive == false){
 			this.init();
