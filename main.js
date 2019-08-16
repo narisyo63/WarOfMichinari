@@ -50,9 +50,11 @@ function update()
 
 
 	//enemy
-	if(enemy.setActive){
+	if(enemy.HP>0){
 		enemy.showImage(player.x,player.y);
 		enemy.move(player);
+	}else{
+		emeny.setActive = false;
 	}
 	enemy.hitJudge(player);
 

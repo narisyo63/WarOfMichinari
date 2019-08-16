@@ -39,9 +39,6 @@ class Enemy
 		var distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 		if(distance<50){
 			this.HP-=player.damage;
-			if(this.HP <= 0){
-				this.setActive = false;
-			}	
 		}
 		if(this.setActive == false){
 			this.init();
@@ -60,5 +57,5 @@ class Enemy
 
 class EnemyController
 {
-	
+
 }
