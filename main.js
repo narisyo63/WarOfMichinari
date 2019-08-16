@@ -37,6 +37,7 @@ function update()
 	//player
 	if(player.hp>0){
 		player.showImage();
+		console.log(player.HP);
 	}
 
 	if(!player.hitJudge(enemy)){
