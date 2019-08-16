@@ -12,12 +12,11 @@ class Player{
 }
 
 class Player1 extends Player{
-	constructor(canvas,image,castle_image,x,y){
+	constructor(canvas,image,x,y){
 		super(canvas,x,y);
 
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
-		this.castle_image;
 		this.speed=1;
 		this.HP=100;
 		this.damage=20;
