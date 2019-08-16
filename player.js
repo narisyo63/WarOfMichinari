@@ -40,8 +40,6 @@ class Player{
 			this.imageChangeNumber=0;
 		}
 	}
-
-
 }
 
 class Player1 extends Player{
