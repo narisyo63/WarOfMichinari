@@ -2,6 +2,7 @@ window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
 let player;
+let enemyControllar;
 let enemy;
 let stage;
 let money;
@@ -20,7 +21,8 @@ function init_time()
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
-	enemy = new Enemy(canvas, enemy_image, 50, 350);
+	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
+	enemy = enemyControllar.enemyData;
 	player = new Player(canvas, player_image, player_castle_image, 650, 350);
 	money=new Money(canvas);
 
