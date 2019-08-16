@@ -25,7 +25,7 @@ class Player{
 	}
 
 	showImage(){//画像の表示
-		this.canvas.drawImage(this.castle_image,575,225,150,150);
+		this.canvas.drawImage(this.castle_image,550,225,150,150);
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
