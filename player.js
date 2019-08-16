@@ -1,34 +1,14 @@
 class Player{
-	constructor(canvas,x,y){
+	constructor(canvas,image,x,y){
 		this.canvas=canvas;
-		this.x=x;
-		this.y=y;
-	}
-
-	move(speed){//playerの動き
-		this.x-=speed;
-	}
-
-}
-
-class Player1 extends Player{
-	constructor(canvas,image,castle_image,x,y){
-		super(canvas,x,y);
-
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
-		this.castle_image;
-		this.speed=1;
-		this.HP=100;
-		this.damage=20;
-
-		this.ArrowUp=this.ArrowDown=this.ArrowRight=this.ArrowLeft=false;
-		this.Space=false;
-
-		this.readImage(image,castle_image);
+		this.x=x;
+		this.y=y;
+		this.readImage(image);
 	}
 
-	readImage(image,castle_image){//画像の読み込み
+	readImage(image){//画像の読み込み
 		for(let i=0;i<image.length;i++){
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
@@ -39,10 +19,8 @@ class Player1 extends Player{
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
-	showHP(){//HPの表示
-		this.canvas.fillStyle="white";
-		this.canvas.font="48px serif";
-		this.canvas.fillText(this.HP,10,50);
+	move(speed){//playerの動き
+		this.x-=speed;
 	}
 
 	hitJudge(enemy){//敵との当たり判定
@@ -55,7 +33,6 @@ class Player1 extends Player{
 		}
 	}
 
-
 	attack(){
 		if(this.imageChangeNumber==0){
 			this.imageChangeNumber=1;
@@ -63,7 +40,25 @@ class Player1 extends Player{
 			this.imageChangeNumber=0;
 		}
 	}
+}
 
+class Player1 extends Player{
+	constructor(canvas,image,x,y){
+		super(canvas,image,x,y);
+
+		this.speed=1;
+		this.HP=100;
+		this.damage=20;
+	}
+
+}class Player2 extends Player{
+	constructor(canvas,image,x,y){
+		super(canvas,image,x,y);
+
+		this.speed=2;
+		this.HP=20;
+		this.damage=10;
+	}
 }
 
 
