@@ -51,16 +51,16 @@ class Player1 extends Player{
 		this.speed=1;
 		this.HP=100;
 		this.damage=20;
-}
-
-	showHP(){//HPの表示
-		this.canvas.fillStyle="white";
-		this.canvas.font="48px serif";
-		this.canvas.fillText(this.HP,10,50);
 	}
 
+}class Player2 extends Player{
+	constructor(canvas,image,x,y){
+		super(canvas,image,x,y);
 
-
+		this.speed=2;
+		this.HP=20;
+		this.damage=10;
+	}
 }
 
 

@@ -26,6 +26,7 @@ function init_time()
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
 
 	player1 = new Player1(canvas, player1_image, 650, 350);
+	player2 = new Player2(canvas, player2_image, 650, 350);
 
 	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
 	enemy = enemyControllar.enemyData;
@@ -53,6 +54,16 @@ function update()
 		player1.attack();
 	}
 
+	//player2
+	if(player2.HP>0){
+		player2.showImage();
+	}
+
+	if(!player2.hitJudge(enemy)){
+		player2.move(player2.speed);
+	}else{
+		player2.attack();
+	}
 
 
 
