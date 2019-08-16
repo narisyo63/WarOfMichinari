@@ -35,7 +35,7 @@ function update()
 	stage.draw_canvas();
 
 	//player
-	if(player.HP>0){
+	if(player.hp>0){
 		player.showImage();
 	}
 
@@ -52,11 +52,11 @@ function update()
 
 
 	//enemy
-	if(enemy.HP>0){
+	if(enemy.hp>0){
 		enemy.showImage(player.x,player.y);
 		enemy.move(player);
 	}else{
-		emeny.setActive = false;
+		enemy.setActive = false;
 	}
 	enemy.hitJudge(player);
 
