@@ -1,18 +1,23 @@
 class Player{
-	constructor(canvas){
+	constructor(canvas,x,y){
 		this.canvas=canvas;
+		this.x=x;
+		this.y=y;
+	}
+
+	move(){//playerの動き
+		this.x-=1;
 	}
 
 }
 
 class Player1 extends Player{
 	constructor(canvas,image,castle_image,x,y){
-		super(canvas);
+		super(canvas,x,y);
+
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
 		this.castle_image;
-		this.x=x;
-		this.y=y;
 		this.HP=100;
 		this.damage=20;
 
@@ -27,12 +32,9 @@ class Player1 extends Player{
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
 		}
-		this.castle_image=new Image();
-		this.castle_image.src=castle_image;
 	}
 
 	showImage(){//画像の表示
-		this.canvas.drawImage(this.castle_image,550,225,150,150);
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
@@ -52,9 +54,6 @@ class Player1 extends Player{
 		}
 	}
 
-	move(){//playerの動き
-		this.x-=1;
-	}
 
 	attack(){
 		if(this.imageChangeNumber==0){
