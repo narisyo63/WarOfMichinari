@@ -19,21 +19,14 @@ function init_time()
 	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
-<<<<<<< HEAD
-
-<<<<<<< HEAD
 	enemy = new Enemy(canvas, enemy_image, 50, 350);
 	player1 = new Player1(canvas, player1_image, player1_castle_image, 650, 350);
-=======
 	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
 	enemy = enemyControllar.enemyData;
 	player = new Player(canvas, player_image, player_castle_image, 650, 350);
->>>>>>> 5266aebc76cd641358ae2dd9498afbfa285de4fe
-=======
 	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
 	enemy = enemyControllar.enemyData;
 	player = new Player1(canvas, player_image, player_castle_image, 650, 350);
->>>>>>> 4f594e2f750b21dc2dc81d41ef658ad0a8247ca8
 	money=new Money(canvas);
 
 }
