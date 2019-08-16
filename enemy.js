@@ -21,13 +21,6 @@ class Enemy
 
 	}
 
-	init(){
-		this.x = this.X;
-		this.y = this.Y;
-		this.hp = this.HP;
-		this.setActive = true;
-	}
-
 	readImage(image)
 	{
 		this.image.src=image;
@@ -44,9 +37,6 @@ class Enemy
 		if(distance<=50){
 			this.hp-=player.damage;
 		}
-		if(!this.setActive){
-			this.init();
-		}
 	}
 	move(player)
 	{
@@ -61,5 +51,7 @@ class Enemy
 
 class EnemyController
 {
-
+	constructor(canvas,image,x,y){
+		this.enemyData = new Enemy(canvas,image,x,y);
+	}
 }
