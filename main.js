@@ -2,6 +2,7 @@ window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
 let player1;
+let player2;
 let enemy;
 let enemyControllar;
 let stage;
@@ -13,6 +14,8 @@ function init_time()
 	const canvas = cvs.getContext("2d");
 
 	const player1_image = ["img/player1.png","img/player1_attack.png"];
+	const player2_image = ["img/player2.png","img/player2_attack.png"];
+
 	const player1_castle_image = "img/player1_castle.png";
 	const enemy_image = "img/enemy.png";
 	const fgcolor = "lightgreen";
@@ -49,7 +52,6 @@ function update()
 	}else{
 		player1.attack();
 	}
-
 
 
 
