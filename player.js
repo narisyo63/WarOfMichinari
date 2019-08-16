@@ -32,12 +32,9 @@ class Player1 extends Player{
 			this.image[i]=new Image();
 			this.image[i].src=image[i];
 		}
-		this.castle_image=new Image();
-		this.castle_image.src=castle_image;
 	}
 
 	showImage(){//画像の表示
-		this.canvas.drawImage(this.castle_image,550,225,150,150);
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
