@@ -1,9 +1,9 @@
 window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
-const player;
-const stage;
-const enemy;
+let player;
+let stage;
+let enemy;
 
 function init_time()
 {
