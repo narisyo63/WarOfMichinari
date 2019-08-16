@@ -7,7 +7,8 @@ let enemy;
 
 function init_time()
 {
-	let canvas = document.getElementById("canvas").getContext("2d");;
+	const cvs = document.getElementById("canvas");
+	const canvas = cvs.getContext("2d");
 
 	let player_image = ["img/player.png","img/player_attack.png"];
 	let enemy_image = "img/enemy.png";
