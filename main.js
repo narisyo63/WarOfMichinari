@@ -20,8 +20,7 @@ function init_time()
 	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
-	enemy = new Enemy(canvas, enemy_image, 50, 350);
-
+	
 	player1 = new Player1(canvas, player1_image, player1_castle_image, 650, 350);
 
 	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
@@ -57,14 +56,7 @@ function update()
 
 
 	//enemy
-	if(enemy.hp>0){
-		enemy.showImage(player1.x,player1.y);
-		enemy.move(player1);
-	}else{
-		enemy.setActive = false;
-	}
-	enemy.hitJudge(player1);
-
+	enemyControllar.generator();
 
 
 
