@@ -58,7 +58,6 @@ class EnemyGenerator
 		this.image = image;
 		this.x = x;
 		this.y = y;
-		this.enemyData = new Enemy(canvas,image,x,y);
 
 		this.enemy_list = new Array();
 		let rd;
@@ -86,26 +85,5 @@ class EnemyGenerator
 				this.eneCnt--;
 			}
 		}
-
-
-
-
-
-
-
-
-
-		//旧データ
-		if(this.enemyData.hp>0){
-			for(let i = 0; i < player_list.length; i++){
-				this.enemyData.hitJudge(player_list[i]);
-				this.enemyData.showImage(player_list[i].x,player_list[i].y);
-				this.enemyData.move(player_list[i]);
-			}
-		}else{
-			this.enemyData.setActive = false;
-		}
-		
-	
 	}
 }
