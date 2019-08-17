@@ -25,12 +25,14 @@ class Player{
 	}
 
 	hitJudge(enemy){//敵との当たり判定
-		let distance=Math.sqrt((enemy.x-this.x)**2+(enemy.y-this.y)**2);
-		if(distance<=50){
-			this.hp-=enemy.damage;
-			return true;
-		}else{
-			return false;
+		for(let i=0;i<enemy.length;i++){
+			let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
+			if(distance<=50){
+				this.hp-=enemy[i].damage;
+				return true;
+			}else{
+				return false;
+			}
 		}
 	}
 
