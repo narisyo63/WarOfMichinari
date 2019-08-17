@@ -50,7 +50,7 @@ function update()
 	//player
 
 	for(let i=0;i<player_list.length;i++){
-		if(player_list[i].HP>0){
+		if(player_list[i].hp>0){
 			player_list[i].showImage();
 		}
 
