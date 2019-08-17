@@ -31,7 +31,7 @@ function init_time()
 	// player1 = new Player1(canvas, player1_image, 650, 350);
 	// player2 = new Player2(canvas, player2_image, 650, 350);
 
-	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
+	enemyGenerator = new EnemyGenerator(canvas, enemy_image, 50, 350);
 	enemy = enemyControllar.enemyData;
 	money=new Money(canvas);
 
@@ -66,7 +66,7 @@ function update()
 
 
 	//enemy
-	enemyControllar.generator();
+	enemyGontrollar.generator();
 
 
 

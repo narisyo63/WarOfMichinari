@@ -48,7 +48,10 @@ class Enemy
 	}
 }
 
-class EnemyController
+
+
+
+class EnemyGenerator
 {
 	constructor(canvas,image,x,y){
 		this.canvas = canvas;
