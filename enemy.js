@@ -97,9 +97,11 @@ class EnemyGenerator
 
 		//旧データ
 		if(this.enemyData.hp>0){
-			this.enemyData.hitJudge(player1);
-			this.enemyData.showImage(player1.x,player1.y);
-			this.enemyData.move(player1);
+			for(let i = 0; i < player_list.length; i++){
+				this.enemyData.hitJudge(player_list[i]);
+				this.enemyData.showImage(player_list[i].x,player_list[i].y);
+				this.enemyData.move(player_list[i]);
+			}
 		}else{
 			this.enemyData.setActive = false;
 		}
