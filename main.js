@@ -66,7 +66,7 @@ function update()
 
 
 	//enemy
-	enemyGontrollar.generator();
+	enemyGenerator.generator();
 
 
 
