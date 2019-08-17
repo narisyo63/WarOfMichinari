@@ -19,8 +19,8 @@ class Player{
 		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
 	}
 
-	move(speed){//playerの動き
-		this.x-=speed;
+	move(){//playerの動き
+		this.x-=1;
 	}
 
 	hitJudge(enemy){//敵との当たり判定
@@ -42,11 +42,11 @@ class Player{
 	}
 }
 
+
 class Player1 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y);
 
-		this.speed=1;
 		this.HP=100;
 		this.damage=20;
 	}
@@ -55,9 +55,12 @@ class Player1 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y);
 
-		this.speed=2;
 		this.HP=20;
 		this.damage=10;
+	}
+	
+	move(){
+		this.x-=2;
 	}
 }
 

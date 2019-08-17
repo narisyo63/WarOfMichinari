@@ -55,7 +55,7 @@ function update()
 		}
 
 		if(!player_list[i].hitJudge(enemy)){
-			player_list[i].move(player_list[i].speed);
+			player_list[i].move();
 		}else{
 			player_list[i].attack();
 		}
