@@ -62,6 +62,8 @@ function update()
 		}else{
 			player_list[i].attack();//攻撃
 		}
+
+		player_list[i].selectPanel();//player選択のPanel表示
 	}
 
 

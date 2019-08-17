@@ -51,6 +51,11 @@ class Player1 extends Player{
 		this.damage=20;
 	}
 
+	selectPanel(){
+		this.canvas.fillStyle="red";
+		this.canvas.fillRect(600,425,50,50);
+	}
+
 }class Player2 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y,20);
@@ -61,6 +66,12 @@ class Player1 extends Player{
 	move(){
 		this.x-=2;
 	}
+
+	selectPanel(){
+		this.canvas.fillStyle="black";
+		this.canvas.fillRect(500,425,50,50);
+	}
+
 }
 
 
