@@ -1,10 +1,11 @@
 class Player{
-	constructor(canvas,image,x,y){
+	constructor(canvas,image,x,y,hp){
 		this.canvas=canvas;
 		this.image=new Array(image.length);
 		this.imageChangeNumber=0;
 		this.x=x;
 		this.y=y;
+		this.hp=hp;
 		this.readImage(image);
 	}
 
@@ -26,7 +27,7 @@ class Player{
 	hitJudge(enemy){//敵との当たり判定
 		let distance=Math.sqrt((enemy.x-this.x)**2+(enemy.y-this.y)**2);
 		if(distance<=50){
-			this.HP-=enemy.damage;
+			this.hp-=enemy.damage;
 			return true;
 		}else{
 			return false;
@@ -45,20 +46,18 @@ class Player{
 
 class Player1 extends Player{
 	constructor(canvas,image,x,y){
-		super(canvas,image,x,y);
+		super(canvas,image,x,y,100);
 
-		this.HP=100;
 		this.damage=20;
 	}
 
 }class Player2 extends Player{
 	constructor(canvas,image,x,y){
-		super(canvas,image,x,y);
+		super(canvas,image,x,y,20);
 
-		this.HP=20;
 		this.damage=10;
 	}
-	
+
 	move(){
 		this.x-=2;
 	}
