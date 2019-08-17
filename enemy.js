@@ -60,7 +60,7 @@ class EnemyGenerator
 		this.y = y;
 		this.enemyData = new Enemy(canvas,image,x,y);
 
-		this.enemy_list = new Array;
+		this.enemy_list = new Array();
 		let rd;
 		this.eneCnt = 0;
 	}
