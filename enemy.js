@@ -48,7 +48,10 @@ class Enemy
 	}
 }
 
-class EnemyController
+
+
+
+class EnemyGenerator
 {
 	constructor(canvas,image,x,y){
 		this.canvas = canvas;
@@ -57,7 +60,7 @@ class EnemyController
 		this.y = y;
 		this.enemyData = new Enemy(canvas,image,x,y);
 
-		this.eneData = new Array;
+		this.enemy_list = new Array;
 		let rd;
 		this.eneCnt = 0;
 	}
@@ -66,18 +69,20 @@ class EnemyController
 		this.rd = Math.floor( Math.random() * 50);
 		console.log(this.eneCnt);
 		if(this.rd == 1){
-			this.eneData[this.eneCnt] = new Enemy(this.canvas,this.image,this.x,this.y);
-			this.eneData[this.eneCnt].setActive = true;
+			this.enemy_list[this.eneCnt] = new Enemy(this.canvas,this.image,this.x,this.y);
+			this.enemy_list[this.eneCnt].setActive = true;
 			this.eneCnt++;
 		}
-		for(let i = 0; i < this.eneData.length; i++){
-			if(this.eneData[i] != null){
-				this.eneData[i].hitJudge(player1);
-				this.eneData[i].showImage(player1.x,player1.y);
-				this.eneData[i].move(player1);
+		for(let i = 0; i < this.enemy_list.length; i++){
+			if(this.enemy_list[i] != null){
+				for(let j = 0; j < player_list.length; j++){
+					this.enemy_list[i].hitJudge(player_list[j]);
+					this.enemy_list[i].showImage(player_list[j].x,player_list[j].y);
+					this.enemy_list[i].move(player_list[j]);
+				}
 			}
-			if(this.eneData[i].hp <= 0 && this.eneData[i] != null){
-				this.eneData.shift;
+			if(this.enemy_list[i].hp <= 0 && this.enemy_list[i] != null){
+				this.enemy_list.shift;
 				this.eneCnt--;
 			}
 		}
