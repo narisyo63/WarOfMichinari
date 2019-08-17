@@ -1,6 +1,7 @@
 window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
+let player_list;
 let player1;
 let player2;
 let enemy;
@@ -23,9 +24,12 @@ function init_time()
 	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
-	
-	player1 = new Player1(canvas, player1_image, 650, 350);
-	player2 = new Player2(canvas, player2_image, 650, 350);
+
+	player_list=[];
+	player_list.push(new Player1(canvas, player1_image, 650, 350));
+	player_list.push(new Player2(canvas, player2_image, 650, 350));
+	// player1 = new Player1(canvas, player1_image, 650, 350);
+	// player2 = new Player2(canvas, player2_image, 650, 350);
 
 	enemyControllar = new EnemyController(canvas, enemy_image, 50, 350);
 	enemy = enemyControllar.enemyData;
@@ -42,27 +46,41 @@ function update()
 
 	stage.draw_canvas();
 
+
 	//player1
-	if(player1.HP>0){
-		player1.showImage();
+
+	for(let i=0;i<player_list.length;i++){
+		if(player_list[i].HP>0){
+			player_list[i].showImage();
+		}
+
+		if(!player_list[i].hitJudge(enemy)){
+			player_list[i].move(player_list[i].speed);
+		}else{
+			player_list[i].attack();
+		}
 	}
 
-	if(!player1.hitJudge(enemy)){
-		player1.move(player1.speed);
-	}else{
-		player1.attack();
-	}
+	// if(player1.HP>0){
+		// player1.showImage();
+	// }
 
-	//player2
-	if(player2.HP>0){
-		player2.showImage();
-	}
+	// if(!player1.hitJudge(enemy)){
+		// player1.move(player1.speed);
+	// }else{
+		// player1.attack();
+	// }
 
-	if(!player2.hitJudge(enemy)){
-		player2.move(player2.speed);
-	}else{
-		player2.attack();
-	}
+	// //player2
+	// if(player2.HP>0){
+		// player2.showImage();
+	// }
+
+	// if(!player2.hitJudge(enemy)){
+		// player2.move(player2.speed);
+	// }else{
+		// player2.attack();
+	// }
 
 
 
