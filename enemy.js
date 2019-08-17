@@ -77,7 +77,7 @@ class EnemyController
 				this.eneData[i].move(player1);
 			}
 			if(this.eneData[i].hp <= 0 && this.eneData[i] != null){
-				delete this.eneData[i];
+				this.eneData.shift;
 				this.eneCnt--;
 			}
 		}
