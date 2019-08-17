@@ -82,7 +82,7 @@ class EnemyGenerator
 				}
 			}
 			if(this.enemy_list[i].hp <= 0 && this.enemy_list[i] != null){
-				this.enemy_list.shift;
+				this.enemy_list.splice(i,1);
 				this.eneCnt--;
 			}
 		}
