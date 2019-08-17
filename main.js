@@ -52,20 +52,19 @@ function update()
 	for(let i=0;i<player_list.length;i++){
 		if(player_list[i].hp>0){
 			player_list[i].showImage();//画像の表示
+
+			if(!player_list[i].hitJudge(enemy)){//enemyとの当たり判定
+				player_list[i].move();//動き
+			}else{
+				player_list[i].attack();//攻撃
+			}
 		}else{
 			player_list.splice(i,1);//配列から取り除く
 		}
-
-	console.log(player_list);
-		if(!player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-			player_list[i].move();//動き
-		}else{
-			player_list[i].attack();//攻撃
-		}
-
-		player_list[i].selectPanel();//player選択のPanel表示
 	}
 
+	// player_list[i].selectPanel();//player選択のPanel表示
+	// player_list[i].selectPanel();//player選択のPanel表示
 
 
 
