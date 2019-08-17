@@ -66,7 +66,7 @@ class EnemyGenerator
 
 	generator(){
 		this.rd = Math.floor( Math.random() * 50);
-		console.log(this.eneCnt);
+		console.log(this.enemy_list.length);
 		if(this.rd == 1){
 			this.enemy_list[this.eneCnt] = new Enemy(this.canvas,this.image,this.x,this.y);
 			this.enemy_list[this.eneCnt].setActive = true;
