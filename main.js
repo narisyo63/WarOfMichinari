@@ -53,7 +53,7 @@ function update()
 		if(player_list[i].hp>0){
 			player_list[i].showImage();//画像の表示
 		}else{
-			player_list.splice(i, 1);//配列から取り除く
+			player_list.splice(i,1);//配列から取り除く
 		}
 
 	console.log(player_list);
