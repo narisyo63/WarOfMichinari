@@ -34,7 +34,7 @@ class Player{
 		}
 	}
 
-	attack(){
+	attack(){//playerの攻撃
 		if(this.imageChangeNumber==0){
 			this.imageChangeNumber=1;
 		}else{
