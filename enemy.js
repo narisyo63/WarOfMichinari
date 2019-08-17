@@ -51,20 +51,52 @@ class Enemy
 class EnemyController
 {
 	constructor(canvas,image,x,y){
+		this.canvas = canvas;
+		this.image = image;
+		this.x = x;
+		this.y = y;
 		this.enemyData = new Enemy(canvas,image,x,y);
+
+		this.eneData = new Array;
+		let rd;
+		this.eneCnt = 0;
 	}
 
 	generator(){
-		console.log(this.enemyData.setActive);
-		this.enemyData.setActive = true;
+		this.rd = Math.floor( Math.random() * 50);
+		console.log(this.eneCnt);
+		if(this.rd == 1){
+			this.eneData[this.eneCnt] = new Enemy(this.canvas,this.image,this.x,this.y);
+			this.eneData[this.eneCnt].setActive = true;
+			this.eneCnt++;
+		}
+		for(let i = 0; i < this.eneData.length; i++){
+			if(this.eneData[i] != null){
+				this.eneData[i].hitJudge(player1);
+				this.eneData[i].showImage(player1.x,player1.y);
+				this.eneData[i].move(player1);
+			}
+			if(this.eneData[i].hp <= 0 && this.eneData[i] != null){
+				this.eneData.shift;
+				this.eneCnt--;
+			}
+		}
 
-		if(enemy.hp>0){
+
+
+
+
+
+
+
+
+		//旧データ
+		if(this.enemyData.hp>0){
 			this.enemyData.hitJudge(player1);
 			this.enemyData.showImage(player1.x,player1.y);
 			this.enemyData.move(player1);
 		}else{
 			this.enemyData.setActive = false;
-			delete this.enemyData;
 		}
 		
 	
