@@ -47,7 +47,7 @@ function update()
 	stage.draw_canvas();
 
 
-	//player1
+	//player
 
 	for(let i=0;i<player_list.length;i++){
 		if(player_list[i].HP>0){
@@ -60,27 +60,6 @@ function update()
 			player_list[i].attack();
 		}
 	}
-
-	// if(player1.HP>0){
-		// player1.showImage();
-	// }
-
-	// if(!player1.hitJudge(enemy)){
-		// player1.move(player1.speed);
-	// }else{
-		// player1.attack();
-	// }
-
-	// //player2
-	// if(player2.HP>0){
-		// player2.showImage();
-	// }
-
-	// if(!player2.hitJudge(enemy)){
-		// player2.move(player2.speed);
-	// }else{
-		// player2.attack();
-	// }
 
 
 
