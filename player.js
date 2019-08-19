@@ -73,17 +73,19 @@ class PlayerGenerator{
 	constructor(cvs,canvas,player1_image,player2_image,x,y){
 		this.cvs=cvs;
 		this.canvas=canvas;
+		this.player1_image=player1_image;
+		this.player2_image=player2_image;
 		this.x=x;
 		this.y=y;
 
-		this.player_list=[]
-		this.player_list.push(new Player1(this.canvas,player1_image,this.x,this.y));
-		this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
+		this.player_list=new Array();
+		//this.player_list.push(new Player1(this.canvas,player1_image,this.x,this.y));
+		//this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
 
 		this.panel=new Panel(this.canvas);
 
-		this.cvs.addEventListener ("click",this.click,false);
-
+		//this.cvs.addEventListener("click",this.click.bind(event),false);
+		this.cvs.addEventListener("click",this.onClick,false);
 
 	}
 
@@ -105,23 +107,23 @@ class PlayerGenerator{
 
 		this.panel.selectPanel();
 
-		// this.canvas.fillStyle="black";
-		// this.canvas.fillRect(this.x,this.y,10,10);
-
 	}
 
-	click(event){
+	onClick(event){
 		let rect = event.target.getBoundingClientRect();
 		let px=event.clientX-rect.left;
 		let py=event.clientY-rect.top;
 
 		if(px>600 && px<650 && py>425 && py<475){
-			console.log("YES!YES!YES!YES!YES!YES!YES!YES!");
+			//player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
+			this.add();
 		}
-		// this.x=e.clientX;
-		// this.y=e.clientY;
-		// console.log(this.x,this.y);
 	}
+
+	add(){
+		console.log("YES");
+	}
+
 }
 
 
