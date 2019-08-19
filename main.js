@@ -18,7 +18,7 @@ function init_time()
 	const player2_image = ["img/player2.png","img/player2_attack.png"];
 
 	const player1_castle_image = "img/player1_castle.png";
-	const enemy_image = "img/enemy.png";
+	const enemy_image = "img/enemy/enemy.png";
 	const fgcolor = "lightgreen";
 	const bgcolor = "skyblue";
 	const ldcolor = "sienna";
