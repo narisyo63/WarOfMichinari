@@ -101,7 +101,7 @@ class EnemyGenerator
 	generator(player)
 	{
 		this.rd = Math.floor( Math.random() * 50);
-		console.log(this.alleneCnt);
+		console.log(this.eneCnt[1]);
 
 /*		if(this.rd == 1){
 			this.enemy_list[this.alleneCnt] = new Enemy2(this.canvas,this.image,this.x,this.y);
@@ -111,24 +111,21 @@ class EnemyGenerator
 */
 		this.exp++;
 		if(this.exp >= 50){
-			if(this.eneCnt[1] < 4)
-				this.enemy_list[this.alleneCnt] = new Enemy1(this.canvas,this.image,this.x,this.y);
+			if(this.eneCnt[1] < 2){
+				this.enemy_list.push(new Enemy1(this.canvas,this.image,this.x,this.y));	
 				this.alleneCnt++;
 				this.eneCnt[1]++;
 				this.exp -= 50;
-
+			}
 			if(this.exp >= 100){
-				if(this.eneCnt[2] < 4)
-				this.enemy_list[this.alleneCnt] = new Enemy2(this.canvas,this.image,this.x,this.y);
-				this.enemy_list[this.alleneCnt].setActive = true;
+				if(this.eneCnt[2] < 2)
+				this.enemy_list.push(new Enemy2(this.canvas,this.image,this.x,this.y));
 				this.alleneCnt++;
 				this.eneCnt[2]++;
 				this.exp -= 100;
 
 				if(this.exp >= 300){
-					if(this.eneCnt[3] < 4)
-					this.enemy_list[this.alleneCnt] = new Enemy3(this.canvas,this.image,this.x,this.y);
-					this.enemy_list[this.alleneCnt].setActive = true;
+					this.enemy_list.push(new Enemy3(this.canvas,this.image,this.x,this.y));
 					this.alleneCnt++;
 					this.eneCnt[3]++;
 					this.exp -= 300;
@@ -146,8 +143,8 @@ class EnemyGenerator
 				}
 			}
 			if(this.enemy_list[i].hp <= 0 && this.enemy_list[i] != null){
+				this.eneCnt[this.enemy_list[i].num]--;
 				this.enemy_list.splice(i,1);
-				//this.eneCnt[this.enemy_list[i].num]--;
 				this.alleneCnt--;
 			}
 		}
