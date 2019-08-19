@@ -79,14 +79,10 @@ class PlayerGenerator{
 		this.y=y;
 
 		this.player_list=new Array();
-		//this.player_list.push(new Player1(this.canvas,player1_image,this.x,this.y));
-		//this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
 
 		this.panel=new Panel(this.canvas);
 
-		//this.cvs.addEventListener("click",this.click.bind(event),false);
 		this.cvs.addEventListener("click",onClick,false);
-
 	}
 
 	generator(enemy){

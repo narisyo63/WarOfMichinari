@@ -39,9 +39,6 @@ function update()
 {
 
 
-	// document.onkeydown=keydown;
-	// document.onkeyup=keyup;
-
 	stage.draw_canvas();
 
 
@@ -63,23 +60,5 @@ function update()
 
 
 }
-
-
-// function keydown(event){
-	// if(event.keyCode==38){player1.ArrowUp=true;}
-	// if(event.keyCode==40){player1.ArrowDown=true;}
-	// if(event.keyCode==39){player1.ArrowRight=true;}
-	// if(event.keyCode==37){player1.ArrowLeft=true;}
-	// if(event.keyCode==32){player1.Space=true;}
-// }
-
-// function keyup(event){
-	// if(event.keyCode==38){player1.ArrowUp=false;}
-	// if(event.keyCode==40){player1.ArrowDown=false;}
-	// if(event.keyCode==39){player1.ArrowRight=false;}
-	// if(event.keyCode==37){player1.ArrowLeft=false;}
-	// if(event.keyCode==32){player1.Space=false;}
-// }
-
 
 
