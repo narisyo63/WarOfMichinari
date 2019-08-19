@@ -73,7 +73,7 @@ class EnemyGenerator
 
 
 
-	generator(){
+	generator(player){
 		this.rd = Math.floor( Math.random() * 50);
 		console.log(this.exp);
 		this.exp++;
@@ -84,10 +84,10 @@ class EnemyGenerator
 		}
 		for(let i = 0; i < this.enemy_list.length; i++){
 			if(this.enemy_list[i] != null){
-				for(let j = 0; j < player_list.length; j++){
-					this.enemy_list[i].hitJudge(player_list[j]);
-					this.enemy_list[i].showImage(player_list[j].x,player_list[j].y);
-					this.enemy_list[i].move(player_list[j]);
+				for(let j = 0; j < player.length; j++){
+					this.enemy_list[i].hitJudge(player[j]);
+					this.enemy_list[i].showImage(player[j].x,player[j].y);
+					this.enemy_list[i].move(player[j]);
 				}
 			}
 			if(this.enemy_list[i].hp <= 0 && this.enemy_list[i] != null){
