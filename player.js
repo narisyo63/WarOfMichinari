@@ -85,7 +85,7 @@ class PlayerGenerator{
 		this.panel=new Panel(this.canvas);
 
 		//this.cvs.addEventListener("click",this.click.bind(event),false);
-		this.cvs.addEventListener("click",this.onClick,false);
+		this.cvs.addEventListener("click",onClick,false);
 
 	}
 
@@ -109,22 +109,23 @@ class PlayerGenerator{
 
 	}
 
-	onClick(event){
-		let rect = event.target.getBoundingClientRect();
-		let px=event.clientX-rect.left;
-		let py=event.clientY-rect.top;
-
-		if(px>600 && px<650 && py>425 && py<475){
-			//player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
-			this.add();
-		}
-	}
-
 	add(){
-		console.log("YES");
+		this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
 	}
-
 }
+
+function onClick(event){
+	let rect = event.target.getBoundingClientRect();
+	let px=event.clientX-rect.left;
+	let py=event.clientY-rect.top;
+
+	if(px>600 && px<650 && py>425 && py<475){
+		//player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
+		//this.add();
+		playerGenerator.add();
+	}
+}
+
 
 
 
