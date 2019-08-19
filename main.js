@@ -1,11 +1,11 @@
 window.onload=init_time; //最初にロードされる
 const id=window.setInterval(update,50); //アップロードされる
 
-let player_list;
-let player1;
-let player2;
+let player;
+let playerGenerator;
+
 let enemy;
-let enemyControllar;
+let enemyGenerator;
 let stage;
 let money;
 
@@ -25,11 +25,9 @@ function init_time()
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
-	player_list=[];
-	player_list.push(new Player1(canvas, player1_image, 650, 350));
-	player_list.push(new Player2(canvas, player2_image, 650, 350));
-	// player1 = new Player1(canvas, player1_image, 650, 350);
-	// player2 = new Player2(canvas, player2_image, 650, 350);
+	playerGenerator = new PlayerGenerator(canvas,player1_image,player2_image);
+	player = playerGenerator.player_list;
+
 
 	enemyGenerator = new EnemyGenerator(canvas, enemy_image, 50, 350);
 	enemy = enemyGenerator.enemy_list;
@@ -48,29 +46,15 @@ function update()
 
 
 	//player
+	playerGenerator.generator(enemy);
 
-	for(let i=0;i<player_list.length;i++){
-		if(player_list[i].hp>0){
-			player_list[i].showImage();//画像の表示
 
-			if(!player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-				player_list[i].move();//動き
-			}else{
-				player_list[i].attack();//攻撃
-			}
-		}else{
-			player_list.splice(i,1);//配列から取り除く
-		}
-	}
-
-	// player_list[i].selectPanel();//player選択のPanel表示
-	// player_list[i].selectPanel();//player選択のPanel表示
 
 
 
 
 	//enemy
-	enemyGenerator.generator();
+	enemyGenerator.generator(player);
 
 
 

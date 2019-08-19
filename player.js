@@ -76,6 +76,30 @@ class Player1 extends Player{
 
 }
 
+class PlayerGenerator{
+
+	constructor(canvas,player1_image,player2_image){
+		this.player_list=[]
+		this.player_list.push(new Player1(canvas, player1_image, 650, 350));
+		this.player_list.push(new Player2(canvas, player2_image, 650, 350));
+	}
+
+	generator(enemy){
+		for(let i=0;i<this.player_list.length;i++){
+			if(this.player_list[i].hp>0){
+				this.player_list[i].showImage();//画像の表示
+
+				if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
+					this.player_list[i].move();//動き
+				}else{
+					this.player_list[i].attack();//攻撃
+				}
+			}else{
+				this.player_list.splice(i,1);//配列から取り除く
+			}
+		}
+	}
+}
 
 
 
