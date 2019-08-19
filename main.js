@@ -25,7 +25,7 @@ function init_time()
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 
-	playerGenerator = new PlayerGenerator(canvas,player1_image,player2_image);
+	playerGenerator = new PlayerGenerator(canvas,player1_image,player2_image,650,350);
 	player = playerGenerator.player_list;
 
 
