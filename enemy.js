@@ -102,13 +102,7 @@ class EnemyGenerator
 	{
 		this.rd = Math.floor( Math.random() * 50);
 		console.log(this.eneCnt[1]);
-
-/*		if(this.rd == 1){
-			this.enemy_list[this.alleneCnt] = new Enemy2(this.canvas,this.image,this.x,this.y);
-			this.enemy_list[this.alleneCnt].setActive = true;
-			this.alleneCnt++;	
-		}	
-*/
+		
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
