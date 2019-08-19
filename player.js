@@ -79,9 +79,13 @@ class Player1 extends Player{
 class PlayerGenerator{
 
 	constructor(canvas,player1_image,player2_image,x,y){
+		this.canvas=canvas;
+		this.x=x;
+		this.y=y;
+
 		this.player_list=[]
-		this.player_list.push(new Player1(canvas, player1_image, x, y));
-		this.player_list.push(new Player2(canvas, player2_image, x, y));
+		this.player_list.push(new Player1(this.canvas,player1_image,this.x,this.y));
+		this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
 	}
 
 	generator(enemy){
