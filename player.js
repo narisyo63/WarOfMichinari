@@ -109,9 +109,14 @@ class PlayerGenerator{
 
 	}
 
-	add(){
+	add1(){
 		this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
 	}
+
+	add2(){
+		this.player_list.push(new Player2(this.canvas,this.player2_image,this.x,this.y));
+	}
+
 }
 
 function onClick(event){
@@ -120,10 +125,13 @@ function onClick(event){
 	let py=event.clientY-rect.top;
 
 	if(px>600 && px<650 && py>425 && py<475){
-		//player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
-		//this.add();
-		playerGenerator.add();
+		playerGenerator.add1();
 	}
+
+	if(px>500 && px<550 && py>425 && py<475){
+		playerGenerator.add2();
+	}
+
 }
 
 
