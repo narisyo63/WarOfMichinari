@@ -58,6 +58,8 @@ class Player1 extends Player{
 		this.canvas.fillRect(600,425,50,50);
 	}
 
+}
+
 }class Player2 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y,20);
