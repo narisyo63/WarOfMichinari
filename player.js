@@ -53,10 +53,6 @@ class Player1 extends Player{
 		this.damage=20;
 	}
 
-	selectPanel(){
-		this.canvas.fillStyle="red";
-		this.canvas.fillRect(600,425,50,50);
-	}
 
 }
 
@@ -71,15 +67,11 @@ class Player2 extends Player{
 		this.x-=2;
 	}
 
-	selectPanel(){
-		this.canvas.fillStyle="black";
-		this.canvas.fillRect(500,425,50,50);
-	}
-
 }
 
 class PlayerGenerator{
-	constructor(canvas,player1_image,player2_image,x,y){
+	constructor(cvs,canvas,player1_image,player2_image,x,y){
+		this.cvs=cvs;
 		this.canvas=canvas;
 		this.x=x;
 		this.y=y;
@@ -89,6 +81,9 @@ class PlayerGenerator{
 		this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
 
 		this.panel=new Panel(this.canvas);
+
+		this.cvs.addEventListener ("click",this.click,false);
+
 
 	}
 
@@ -106,6 +101,26 @@ class PlayerGenerator{
 				this.player_list.splice(i,1);//配列から取り除く
 			}
 		}
+
+
+		this.panel.selectPanel();
+
+		// this.canvas.fillStyle="black";
+		// this.canvas.fillRect(this.x,this.y,10,10);
+
+	}
+
+	click(event){
+		let rect = event.target.getBoundingClientRect();
+		let px=event.clientX-rect.left;
+		let py=event.clientY-rect.top;
+
+		if(px>600 && px<650 && py>425 && py<475){
+			console.log("YES!YES!YES!YES!YES!YES!YES!YES!");
+		}
+		// this.x=e.clientX;
+		// this.y=e.clientY;
+		// console.log(this.x,this.y);
 	}
 }
 
