@@ -1,8 +1,7 @@
 class Panel{
-	constructor(){
-		
+	constructor(canvas){
+		this.canvas=canvas;
 	}
 
-	
 
 }

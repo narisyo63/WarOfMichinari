@@ -60,7 +60,7 @@ class Player1 extends Player{
 
 }
 
-}class Player2 extends Player{
+class Player2 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y,20);
 
@@ -79,7 +79,6 @@ class Player1 extends Player{
 }
 
 class PlayerGenerator{
-
 	constructor(canvas,player1_image,player2_image,x,y){
 		this.canvas=canvas;
 		this.x=x;
@@ -88,6 +87,9 @@ class PlayerGenerator{
 		this.player_list=[]
 		this.player_list.push(new Player1(this.canvas,player1_image,this.x,this.y));
 		this.player_list.push(new Player2(this.canvas,player2_image,this.x,this.y));
+
+		this.panel=new Panel(this.canvas);
+
 	}
 
 	generator(enemy){
