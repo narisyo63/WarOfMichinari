@@ -65,7 +65,7 @@ class Enemy2 extends Enemy{
 		this.cost = 100;
 		this.damage=2;
 		this.speed = 1;
-		this.HP = 1000;
+		this.HP = 500;
 	}
 }
 class Enemy3 extends Enemy{
@@ -89,7 +89,8 @@ class castle
 
 		this.x = x;
 		this.y = y;
-		this.hp = 100000;	
+		this.initHP = 100000;
+		this.hp = this.initHP;	
 	}
 	readImage(image)
 	{
@@ -107,6 +108,12 @@ class castle
 				this.hp-=player[i].damage;
 			}
 		}
+	}
+	drawExp(){
+		this.canvas.fillStyle="black";
+		this.canvas.textAlign="center";
+		this.canvas.font="12px serif";
+		this.canvas.fillText(this.hp + "/" + this.initHP,this.x,this.y-30);
 	}
 
 }
@@ -133,6 +140,7 @@ class EnemyGenerator
 		//this.rd = Math.floor( Math.random() * 50);
 		this.castle.showImage();
 		this.castle.hitJudge(player);
+		this.castle.drawExp();
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
