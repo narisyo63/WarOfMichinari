@@ -108,7 +108,6 @@ class PlayerGenerator{
 
 
 		this.panel.selectPanel();
-		console.log(this.player_list);
 	}
 
 	add1(){
