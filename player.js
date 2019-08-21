@@ -118,13 +118,16 @@ class PlayerGenerator{
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
 
-				if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-					if(i != 0){
-						this.player_list[i].move();//動き
+				if(i != 0){//player_list[0]には城が格納されている
+					if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
+							this.player_list[i].move();//動き
+							console.log("move");
+					}else{
+						this.player_list[i].attack();//攻撃
+						console.log("attack");
 					}
-				}else{
-					this.player_list[i].attack();//攻撃
 				}
+
 			}else{
 				this.player_list.splice(i,1);//配列から取り除く
 			}
