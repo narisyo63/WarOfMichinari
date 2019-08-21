@@ -1,3 +1,7 @@
+const player1Value=200;
+const player2Value=100;
+
+
 class Player{
 	constructor(canvas,image,x,y,hp){
 		this.canvas=canvas;
@@ -51,7 +55,7 @@ class Player1 extends Player{
 		super(canvas,image,x,y,100);
 
 		this.damage=20;
-		this.value=200;
+		this.value=player1Value;
 	}
 
 
@@ -62,7 +66,7 @@ class Player2 extends Player{
 		super(canvas,image,x,y,20);
 
 		this.damage=10;
-		this.value=100;
+		this.value=player2Value;
 	}
 
 	move(){
@@ -73,17 +77,18 @@ class Player2 extends Player{
 
 class PlayerGenerator{
 	constructor(cvs,canvas,player1_image,player2_image,money,x,y){
-		this.cvs=cvs;
 		this.canvas=canvas;
-		this.player1=new Player1(this.canvas,player1_image,x,y);
-		this.player2=new Player2(this.canvas,player2_image,x,y);
+		this.player1_image=player1_image;
+		this.player2_image=player2_image;
 		this.money=money;
+		this.x=x;
+		this.y=y;
 
 		this.player_list=new Array();
 
-		this.panel=new Panel(this.canvas);
+		this.panel=new Panel(canvas);
 
-		this.cvs.addEventListener("click",onClick,false);
+		cvs.addEventListener("click",onClick,false);
 	}
 
 	generator(enemy,money){
@@ -103,18 +108,19 @@ class PlayerGenerator{
 
 
 		this.panel.selectPanel();
-
 	}
 
 	add1(){
-		if(this.money-this.player1.value>0){
-			this.player_list.push(this.player1);
+		if(this.money.playerValue-player1Value>0){
+			this.money.playerValue=this.money.playerValue-player1Value;
+			this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
 		}
 	}
 
 	add2(){
-		if(this.money-this.player2.value>0){
-			this.player_list.push(this.player2);
+		if(this.money.playerValue-player2Value>0){
+			this.money.playerValue=this.money.playerValue-player2Value;
+			this.player_list.push(new Player2(this.canvas,this.player2_image,this.x,this.y));
 		}
 	}
 
