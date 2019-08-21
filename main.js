@@ -27,7 +27,7 @@ function init_time()
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
 	money=new Money(canvas);
 
-	playerGenerator = new PlayerGenerator(cvs,canvas,player1_image,player2_image,money,650,350);
+	playerGenerator = new PlayerGenerator(cvs,canvas,player1_image,player2_image,player_castle_image,money,650,350);
 	player = playerGenerator.player_list;
 
 

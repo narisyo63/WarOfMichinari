@@ -75,8 +75,15 @@ class Player2 extends Player{
 
 }
 
+class PlayerCastle{
+	constructor(){
+		
+	}
+
+}
+
 class PlayerGenerator{
-	constructor(cvs,canvas,player1_image,player2_image,money,x,y){
+	constructor(cvs,canvas,player1_image,player2_image,player_castle_image,money,x,y){
 		this.canvas=canvas;
 		this.player1_image=player1_image;
 		this.player2_image=player2_image;
