@@ -80,14 +80,35 @@ class Enemy3 extends Enemy{
 	}
 }
 
+class castle
+{
+	constructor(canvas, castle_image,x,y){
+		this.canvas=canvas;
+		this.image=new Image();
+		this.readImage(image);
 
+		this.x = x;
+		this.y = y;
+		this.hp = 100000;	
+	}
 
+	readImage(image)
+	{
+		this.image.src=image;
+		this.showImage();
+	}
+
+	showImage()
+	{
+		this.canvas.drawImage(this.image,this.x-25,this.y-25,50,50);
+	}
+}
 
 class EnemyGenerator
 {
-	constructor(canvas,image,x,y){
+	constructor(canvas,enemy_image,castle_image,x,y){
 		this.canvas = canvas;
-		this.image = image;
+		this.enemy_image = enemy_image;
 		this.x = x;
 		this.y = y;
 
@@ -96,30 +117,29 @@ class EnemyGenerator
 		let rd;
 		this.alleneCnt = 0;
 		this.eneCnt = [0,0,0,0];
+		this.castle = new castle(canvas, castle_image,x,y);
 	}
-
-
 
 	generator(player)
 	{
-		this.rd = Math.floor( Math.random() * 50);
+		//this.rd = Math.floor( Math.random() * 50);
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
-				this.enemy_list.push(new Enemy1(this.canvas,this.image,this.x,this.y));	
+				this.enemy_list.push(new Enemy1(this.canvas,this.enemy_image,this.x,this.y));	
 				this.alleneCnt++;
 				this.eneCnt[1]++;
 				this.exp -= 50;
 			}
 			if(this.exp >= 100){
 				if(this.eneCnt[2] < 2){
-				this.enemy_list.push(new Enemy2(this.canvas,this.image,this.x,this.y));
+				this.enemy_list.push(new Enemy2(this.canvas,this.enemy_image,this.x,this.y));
 				this.alleneCnt++;
 				this.eneCnt[2]++;
 				this.exp -= 100;
 				}
 				if(this.exp >= 200){
-					this.enemy_list.push(new Enemy3(this.canvas,this.image,this.x,this.y));
+					this.enemy_list.push(new Enemy3(this.canvas,this.enemy_image,this.x,this.y));
 					this.alleneCnt++;
 					this.eneCnt[3]++;
 					this.exp -= 200;
