@@ -87,7 +87,7 @@ class PlayerGenerator{
 		this.cvs.addEventListener("click",onClick,false);
 	}
 
-	generator(enemy){
+	generator(enemy,money){
 		for(let i=0;i<this.player_list.length;i++){
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
@@ -108,8 +108,9 @@ class PlayerGenerator{
 	}
 
 	add1(){
-		this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
-		
+		if(){
+			this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
+		}
 	}
 
 	add2(){
