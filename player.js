@@ -52,9 +52,9 @@ class Player{
 
 class Player1 extends Player{
 	constructor(canvas,image,x,y){
-		super(canvas,image,x,y,100);
+		super(canvas,image,x,y,300);
 
-		this.damage=20;
+		this.damage=100;
 		this.value=player1Value;
 	}
 
@@ -63,9 +63,9 @@ class Player1 extends Player{
 
 class Player2 extends Player{
 	constructor(canvas,image,x,y){
-		super(canvas,image,x,y,20);
+		super(canvas,image,x,y,100);
 
-		this.damage=10;
+		this.damage=50;
 		this.value=player2Value;
 	}
 
