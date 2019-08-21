@@ -17,7 +17,7 @@ function init_time()
 	const player1_image = ["img/player/player1.png","img/player/player1_attack.png"];
 	const player2_image = ["img/player/player2.png","img/player/player2_attack.png"];
 
-	const player_castle_image = "img/player/player_castle.png";
+const player_castle_image = ["img/player/player_castle.png","img/player/player_castle.png"];
 	const enemy_castle_image = "img/enemy/castle.png";
 	const enemy_image = "img/enemy/enemy.png";
 	const fgcolor = "lightgreen";
@@ -50,7 +50,7 @@ function update()
 
 
 	//player
-	playerGenerator.generator(enemy,money);
+	playerGenerator.generator(enemy);
 
 
 

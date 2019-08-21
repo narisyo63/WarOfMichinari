@@ -75,10 +75,25 @@ class Player2 extends Player{
 
 }
 
-class PlayerCastle{
-	constructor(){
-		
+class PlayerCastle extends Player{
+	constructor(canvas,player_castle_image,x,y){
+		super(canvas,player_castle_image,x,y,5000)
+		this.textHP=this.hp;
 	}
+
+	showImage(){//画像の表示
+		this.canvas.drawImage(this.image[this.imageChangeNumber],this.x-25,this.y-25,50,50);
+		this.drawHPValue()
+	}
+
+
+	drawHPValue(){
+		this.canvas.fillStyle="black";
+		this.canvas.textAlign="right";
+		this.canvas.font="12px serif";
+		this.canvas.fillText(this.hp+"/"+this.textHP,this.x+25,this.y-25);
+	}
+
 
 }
 
@@ -91,20 +106,22 @@ class PlayerGenerator{
 		this.x=x;
 		this.y=y;
 
-		this.player_list=new Array();
+		this.player_list=[new PlayerCastle(this.canvas,player_castle_image,this.x,this.y)];
 
 		this.panel=new Panel(canvas);
 
 		cvs.addEventListener("click",onClick,false);
 	}
 
-	generator(enemy,money){
+	generator(enemy){
 		for(let i=0;i<this.player_list.length;i++){
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
 
 				if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-					this.player_list[i].move();//動き
+					if(i != 0){
+						this.player_list[i].move();//動き
+					}
 				}else{
 					this.player_list[i].attack();//攻撃
 				}
