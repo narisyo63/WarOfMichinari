@@ -95,7 +95,6 @@ class castle
 	readImage(image)
 	{
 		this.image.src=image;
-		this.showImage();
 	}
 
 	showImage()
@@ -123,6 +122,7 @@ class EnemyGenerator
 	generator(player)
 	{
 		//this.rd = Math.floor( Math.random() * 50);
+		this.castle.showImage();
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
