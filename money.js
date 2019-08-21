@@ -8,7 +8,10 @@ class Money{
 
 	drawMoneyValue(){
 		this.canvas.fillStyle="black";
+		this.canvas.textAlign="right";
 		this.canvas.font="48px serif";
-		this.canvas.fillText(this.playerValue+"円",480,50);
+		this.canvas.fillText(this.playerValue+"円",690,50);
+
+		this.playerValue++;
 	}
 }

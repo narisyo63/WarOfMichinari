@@ -39,7 +39,13 @@ function update()
 {
 
 
+
 	stage.draw_canvas();
+
+
+	//money
+	money.drawMoneyValue();
+
 
 
 	//player
@@ -55,8 +61,6 @@ function update()
 
 
 
-	//money
-	money.drawMoneyValue();
 
 
 }
