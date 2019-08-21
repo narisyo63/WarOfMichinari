@@ -91,16 +91,24 @@ class castle
 		this.y = y;
 		this.hp = 100000;	
 	}
-
 	readImage(image)
 	{
 		this.image.src=image;
 	}
-
 	showImage()
 	{
 		this.canvas.drawImage(this.image,this.x-25,this.y-25,50,50);
 	}
+	hitJudge(player)	//敵との当たり判定
+	{
+		for(let i = 0; i < player.length; i++){
+			let distance=Math.sqrt((player[i].x-this.x)**2+(player[i].y-this.y)**2);
+			if(distance<=50){
+				this.hp-=player[i].damage;
+			}
+		}
+	}
+
 }
 
 class EnemyGenerator
@@ -121,8 +129,10 @@ class EnemyGenerator
 
 	generator(player)
 	{
+		console.log(this.castle.hp);
 		//this.rd = Math.floor( Math.random() * 50);
 		this.castle.showImage();
+		this.castle.hitJudge(player);
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
