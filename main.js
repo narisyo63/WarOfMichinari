@@ -31,7 +31,7 @@ function init_time()
 	player = playerGenerator.player_list;
 
 
-	enemyGenerator = new EnemyGenerator(canvas, enemy_image, 50, 350);
+	enemyGenerator = new EnemyGenerator(canvas, enemy_image,enemy_castle_image, 50, 350);
 	enemy = enemyGenerator.enemy_list;
 
 }
