@@ -80,7 +80,7 @@ class Enemy3 extends Enemy{
 	}
 }
 
-class castle
+class enemy_castle
 {
 	constructor(canvas, castle_image,x,y){
 		this.canvas=canvas;
@@ -89,6 +89,7 @@ class castle
 
 		this.x = x;
 		this.y = y;
+		this.damage = 0;
 		this.initHP = 100000;
 		this.hp = this.initHP;	
 	}
@@ -109,11 +110,16 @@ class castle
 			}
 		}
 	}
-	drawExp(){
+	drawHP()
+	{
 		this.canvas.fillStyle="black";
 		this.canvas.textAlign="center";
 		this.canvas.font="12px serif";
 		this.canvas.fillText(this.hp + "/" + this.initHP,this.x,this.y-30);
+	}
+	move()
+	{
+		return 0;
 	}
 
 }
@@ -131,16 +137,13 @@ class EnemyGenerator
 		let rd;
 		this.alleneCnt = 0;
 		this.eneCnt = [0,0,0,0];
-		this.castle = new castle(canvas, castle_image,x,y);
+		this.enemy_list.push(new enemy_castle(canvas, castle_image,x,y));
 	}
 
 	generator(player)
 	{
-		console.log(this.castle.hp);
 		//this.rd = Math.floor( Math.random() * 50);
-		this.castle.showImage();
-		this.castle.hitJudge(player);
-		this.castle.drawExp();
+		this.enemy_list[0].drawHP();
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
