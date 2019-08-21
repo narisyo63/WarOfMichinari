@@ -51,7 +51,7 @@ class Enemy1 extends Enemy{
 
 		this.num = 1;
 		this.cost = 50;
-		this.damage=10;
+		this.damage=20;
 		this.speed = 1.5;
 		this.HP = 100;
 
@@ -63,7 +63,7 @@ class Enemy2 extends Enemy{
 
 		this.num = 2;
 		this.cost = 100;
-		this.damage=2;
+		this.damage=10;
 		this.speed = 1;
 		this.HP = 500;
 	}
