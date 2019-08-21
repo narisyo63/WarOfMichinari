@@ -49,7 +49,7 @@ function update()
 
 
 	//player
-	playerGenerator.generator(enemy);
+	playerGenerator.generator(enemy,money);
 
 
 

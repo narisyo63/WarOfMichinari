@@ -51,6 +51,7 @@ class Player1 extends Player{
 		super(canvas,image,x,y,100);
 
 		this.damage=20;
+		this.value=200;
 	}
 
 
@@ -61,6 +62,7 @@ class Player2 extends Player{
 		super(canvas,image,x,y,20);
 
 		this.damage=10;
+		this.value=100;
 	}
 
 	move(){
@@ -107,6 +109,7 @@ class PlayerGenerator{
 
 	add1(){
 		this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
+		
 	}
 
 	add2(){
