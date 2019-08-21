@@ -101,8 +101,6 @@ class EnemyGenerator
 	generator(player)
 	{
 		this.rd = Math.floor( Math.random() * 50);
-		console.log(this.exp);
-
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
