@@ -33,7 +33,7 @@ class Enemy
 		for(let i = 0; i < player.length; i++){
 			let distance=Math.sqrt((player[i].x-this.x)**2+(player[i].y-this.y)**2);
 			if(distance<=50){
-				this.hp-=player.damage;
+				this.hp-=player[i].damage;
 				return true;
 			}else{
 				return false;
@@ -79,6 +79,8 @@ class Enemy3 extends Enemy{
 		this.HP = 200;
 	}
 }
+
+
 
 
 class EnemyGenerator
