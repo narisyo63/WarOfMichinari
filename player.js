@@ -72,13 +72,12 @@ class Player2 extends Player{
 }
 
 class PlayerGenerator{
-	constructor(cvs,canvas,player1_image,player2_image,x,y){
+	constructor(cvs,canvas,player1_image,player2_image,money,x,y){
 		this.cvs=cvs;
 		this.canvas=canvas;
-		this.player1_image=player1_image;
-		this.player2_image=player2_image;
-		this.x=x;
-		this.y=y;
+		this.player1=new Player1(this.canvas,player1_image,x,y);
+		this.player2=new Player2(this.canvas,player2_image,x,y);
+		this.money=money;
 
 		this.player_list=new Array();
 
@@ -108,13 +107,15 @@ class PlayerGenerator{
 	}
 
 	add1(){
-		if(){
-			this.player_list.push(new Player1(this.canvas,this.player1_image,this.x,this.y));
+		if(this.money-this.player1.value>0){
+			this.player_list.push(this.player1);
 		}
 	}
 
 	add2(){
-		this.player_list.push(new Player2(this.canvas,this.player2_image,this.x,this.y));
+		if(this.money-this.player2.value>0){
+			this.player_list.push(this.player2);
+		}
 	}
 
 }

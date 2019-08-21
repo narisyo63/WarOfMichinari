@@ -25,14 +25,14 @@ function init_time()
 	const ldcolor = "sienna";
 
 	stage = new Stage(canvas, 700, 500, fgcolor, bgcolor, ldcolor);
+	money=new Money(canvas);
 
-	playerGenerator = new PlayerGenerator(cvs,canvas,player1_image,player2_image,650,350);
+	playerGenerator = new PlayerGenerator(cvs,canvas,player1_image,player2_image,money,650,350);
 	player = playerGenerator.player_list;
 
 
 	enemyGenerator = new EnemyGenerator(canvas, enemy_image, 50, 350);
 	enemy = enemyGenerator.enemy_list;
-	money=new Money(canvas);
 
 }
 
