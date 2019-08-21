@@ -85,7 +85,7 @@ class castle
 	constructor(canvas, castle_image,x,y){
 		this.canvas=canvas;
 		this.image=new Image();
-		this.readImage(image);
+		this.readImage(castle_image);
 
 		this.x = x;
 		this.y = y;
