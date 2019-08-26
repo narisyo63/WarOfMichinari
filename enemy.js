@@ -37,11 +37,10 @@ class Enemy
 					this.hp-=player[i].damage;
 					return true;
 				}else{
-					return false;	
+					return false;
 				}
 			}
 		}else{
-			console.log(player.hp);
 			let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 			if(distance<=50){
 				return true;
