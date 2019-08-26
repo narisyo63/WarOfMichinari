@@ -63,7 +63,7 @@ class Enemy1 extends Enemy{
 		this.cost = 50;
 		this.damage=10;
 		this.speed = 1.5;
-		this.HP = 80;
+		this.HP = 100;
 
 	}
 }
@@ -147,13 +147,21 @@ class EnemyGenerator
 		let rd;
 		this.alleneCnt = 0;
 		this.eneCnt = [0,0,0,0];
-		this.enemy_list.push(new enemy_castle(canvas, castle_image,x,y));
+		this.enemyCastle = new enemy_castle(canvas, castle_image,x,y);
+		this.enemy_list= new Array();
+	}
+
+	createCastle(player){
+		this.enemyCastle.showImage();
+		this.enemyCastle.hitJudge(player);
+		this.enemyCastle.drawHP();
+
 	}
 
 	generator(player)
 	{
 		//this.rd = Math.floor( Math.random() * 50);
-		this.enemy_list[0].drawHP();
+		this.createCastle(player);
 		this.exp++;
 		if(this.exp >= 50){
 			if(this.eneCnt[1] < 2){
@@ -178,7 +186,6 @@ class EnemyGenerator
 			}
 		}
 
-
 		for(let i = 0; i < this.enemy_list.length; i++){
 			if(this.enemy_list[i].hp > 0){
 				this.enemy_list[i].showImage();
@@ -190,6 +197,6 @@ class EnemyGenerator
 				this.enemy_list.splice(i,1);
 				this.alleneCnt--;
 			}
-		}
+		}	
 	}
 }
