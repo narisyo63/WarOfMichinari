@@ -28,16 +28,25 @@ class Enemy
 		this.canvas.drawImage(this.image,(this.n%2)*32,(this.num-1)*32,32,32,this.x-25,this.y-25,50,50);		
 		this.n++;
 	}
-	hitJudge(player)	//敵との当たり判定
+	hitJudge(player,num)	//敵との当たり判定
 	{	
-		let neadist= 0;
-		for(let i = 0; i < player.length; i++){
-			let distance=Math.sqrt((player[i].x-this.x)**2+(player[i].y-this.y)**2);
+		if(num == 0){
+			for(let i = 0; i < player.length; i++){
+				let distance=Math.sqrt((player[i].x-this.x)**2+(player[i].y-this.y)**2);
+				if(distance<=50){
+					this.hp-=player[i].damage;
+					return true;
+				}else{
+					return false;	
+				}
+			}
+		}else{
+			console.log(player.hp);
+			let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 			if(distance<=50){
-				this.hp-=player[i].damage;
 				return true;
 			}else{
-				return false;	
+				return false;
 			}
 		}
 	}
@@ -171,13 +180,12 @@ class EnemyGenerator
 
 
 		for(let i = 0; i < this.enemy_list.length; i++){
-			if(this.enemy_list[i] != null){
+			if(this.enemy_list[i].hp > 0){
 				this.enemy_list[i].showImage();
-				if(!this.enemy_list[i].hitJudge(player)){
+				if(!this.enemy_list[i].hitJudge(player, 0) && !this.enemy_list[i].hitJudge(playerGenerator.playerCastle, 1)){
 					this.enemy_list[i].move();
 				}
-			}
-			if(this.enemy_list[i].hp <= 0 && this.enemy_list[i] != null){
+			}else{
 				this.eneCnt[this.enemy_list[i].num]--;
 				this.enemy_list.splice(i,1);
 				this.alleneCnt--;
