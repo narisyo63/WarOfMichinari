@@ -99,7 +99,7 @@ class enemy_castle
 		this.x = x;
 		this.y = y;
 		this.damage = 0;
-		this.initHP = 100000;
+		this.initHP = 10000;
 		this.hp = this.initHP;	
 	}
 	readImage(image)
