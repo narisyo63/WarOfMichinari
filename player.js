@@ -94,6 +94,15 @@ class PlayerCastle extends Player{
 		this.canvas.fillText(this.hp+"/"+this.textHP,this.x+25,this.y-25);
 	}
 
+	hitJudge(enemy){//敵との当たり判定
+		for(let i=0;i<enemy.length;i++){
+			let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
+			if(distance<=50){
+				this.hp-=enemy[i].damage;
+			}
+		}
+	}
+
 
 }
 
@@ -106,26 +115,27 @@ class PlayerGenerator{
 		this.x=x;
 		this.y=y;
 
-		this.player_list=[new PlayerCastle(this.canvas,player_castle_image,this.x,this.y)];
+		this.player_list=new Array();
 
+		this.playerCastle=new PlayerCastle(this.canvas,player_castle_image,this.x,this.y);
 		this.panel=new Panel(canvas);
 
 		cvs.addEventListener("click",onClick,false);
 	}
 
 	generator(enemy){
+
+		this.createCastle(enemy);
+
 		for(let i=0;i<this.player_list.length;i++){
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
 
-				if(i != 0){//player_list[0]には城が格納されている
-					if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-							this.player_list[i].move();//動き
-							console.log("move");
-					}else{
-						this.player_list[i].attack();//攻撃
-						console.log("attack");
-					}
+				if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
+						this.player_list[i].move();//動き
+				}else{
+					this.player_list[i].attack();//攻撃
+					console.log("attack");
 				}
 
 			}else{
@@ -134,7 +144,14 @@ class PlayerGenerator{
 		}
 
 
+
 		this.panel.selectPanel();
+	}
+
+
+	createCastle(enemy){
+		this.playerCastle.showImage();
+		this.playerCastle.hitJudge(enemy);
 	}
 
 	add1(){
