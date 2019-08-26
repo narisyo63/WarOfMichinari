@@ -30,7 +30,7 @@ class Player{
 
 	hitJudge(enemy){//敵との当たり判定
 
-		if(typeof enemy == "object"){
+		if(typeof enemy.length == "number"){
 			for(let i=0;i<enemy.length;i++){
 				let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
 				if(distance<=50){
@@ -76,7 +76,7 @@ class Player2 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y,100);
 
-		this.damage=10;
+		this.damage=1000;
 		this.value=player2Value;
 	}
 
@@ -132,11 +132,11 @@ class PlayerGenerator{
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
 
-				if(!this.player_list[i].hitJudge(enemy) || !this.player_list[i].hitJudge(enemyGenerator.enemyCastle)){//enemyとの当たり判定
-					this.player_list[i].move();//動き
-				}else{
+				if(this.player_list[i].hitJudge(enemy) || this.player_list[i].hitJudge(enemyGenerator.enemyCastle)){//enemyとの当たり判定
 					this.player_list[i].attack();//攻撃
 					console.log("attack");
+				}else{
+					this.player_list[i].move();//動き
 				}
 
 			}else{
@@ -144,8 +144,6 @@ class PlayerGenerator{
 			}
 		}
 
-		console.log(typeof enemyGenerator.enemyCastle);
-		console.log(typeof enemy);
 
 		this.panel.selectPanel();
 	}
