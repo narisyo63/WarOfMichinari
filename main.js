@@ -55,7 +55,6 @@ function update()
 
 
 
-
 	//enemy
 	enemyGenerator.generator(player);
 
