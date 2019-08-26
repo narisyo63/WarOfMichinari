@@ -29,14 +29,25 @@ class Player{
 	}
 
 	hitJudge(enemy){//敵との当たり判定
-		for(let i=0;i<enemy.length;i++){
-			let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
-			if(distance<=50){
-				this.hp-=enemy[i].damage;
-				return true;
-			}else{
-				return false;
+
+		if(typeof enemy == "object"){
+			for(let i=0;i<enemy.length;i++){
+				let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
+				if(distance<=50){
+					this.hp-=enemy[i].damage;
+					return true;
+				}else{
+					return false;
+				}
 			}
+		}else{
+				let distance=Math.sqrt((enemy.x-this.x)**2+(enemy.y-this.y)**2);
+				if(distance<=50){
+					this.hp-=enemy.damage;
+					return true;
+				}else{
+					return false;
+				}
 		}
 	}
 
@@ -94,16 +105,6 @@ class PlayerCastle extends Player{
 		this.canvas.fillText(this.hp+"/"+this.textHP,this.x+25,this.y-25);
 	}
 
-	hitJudge(enemy){//敵との当たり判定
-		for(let i=0;i<enemy.length;i++){
-			let distance=Math.sqrt((enemy[i].x-this.x)**2+(enemy[i].y-this.y)**2);
-			if(distance<=50){
-				this.hp-=enemy[i].damage;
-			}
-		}
-	}
-
-
 }
 
 class PlayerGenerator{
@@ -131,8 +132,8 @@ class PlayerGenerator{
 			if(this.player_list[i].hp>0){
 				this.player_list[i].showImage();//画像の表示
 
-				if(!this.player_list[i].hitJudge(enemy)){//enemyとの当たり判定
-						this.player_list[i].move();//動き
+				if(!this.player_list[i].hitJudge(enemy) || !this.player_list[i].hitJudge(enemyGenerator.enemyCastle)){//enemyとの当たり判定
+					this.player_list[i].move();//動き
 				}else{
 					this.player_list[i].attack();//攻撃
 					console.log("attack");
@@ -143,15 +144,15 @@ class PlayerGenerator{
 			}
 		}
 
-
+		console.log(typeof enemyGenerator.enemyCastle);
+		console.log(typeof enemy);
 
 		this.panel.selectPanel();
 	}
 
 
-	createCastle(enemy){
+	createCastle(){
 		this.playerCastle.showImage();
-		this.playerCastle.hitJudge(enemy);
 	}
 
 	add1(){
