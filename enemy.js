@@ -30,7 +30,6 @@ class Enemy
 	}
 	hitJudge(player)	//敵との当たり判定
 	{	
-		let neadist= 0;
 		for(let i = 0; i < player.length; i++){
 			let distance=Math.sqrt((player[i].x-this.x)**2+(player[i].y-this.y)**2);
 			if(distance<=50){
