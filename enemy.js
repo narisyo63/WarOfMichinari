@@ -41,7 +41,6 @@ class Enemy
 				}
 			}
 		}else{
-			console.log(player.hp);
 			let distance=Math.sqrt((player.x-this.x)**2+(player.y-this.y)**2);
 			if(distance<=50){
 				return true;
@@ -161,6 +160,7 @@ class EnemyGenerator
 
 	generator(player)
 	{
+		console.log(enemyGenerator.enemyCastle.y);
 		//this.rd = Math.floor( Math.random() * 50);
 		this.createCastle(player);
 		this.exp++;
