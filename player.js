@@ -76,7 +76,7 @@ class Player2 extends Player{
 	constructor(canvas,image,x,y){
 		super(canvas,image,x,y,100);
 
-		this.damage=1000;
+		this.damage=10;
 		this.value=player2Value;
 	}
 
@@ -148,8 +148,9 @@ class PlayerGenerator{
 	}
 
 
-	createCastle(){
+	createCastle(enemy){
 		this.playerCastle.showImage();
+		this.playerCastle.hitJudge(enemy);
 	}
 
 	add1(){
