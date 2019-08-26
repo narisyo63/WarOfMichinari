@@ -44,19 +44,23 @@ function update()
 	stage.draw_canvas();
 
 
-	//money
-	money.drawMoneyValue();
+	if(playerGenerator.playerCastle.hp>0 && enemyGenerator.enemyCastle.hp>0){
+		//money
+		money.drawMoneyValue();
 
 
 
-	//player
-	playerGenerator.generator(enemy);
+		//player
+		playerGenerator.generator(enemy);
 
 
 
 
-	//enemy
-	enemyGenerator.generator(player);
+		//enemy
+		enemyGenerator.generator(player);
+	}else{
+		console.log("ゲーム終了！");
+	}
 
 
 

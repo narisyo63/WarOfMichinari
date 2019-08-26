@@ -134,7 +134,6 @@ class PlayerGenerator{
 
 				if(this.player_list[i].hitJudge(enemy) || this.player_list[i].hitJudge(enemyGenerator.enemyCastle)){//enemyとの当たり判定
 					this.player_list[i].attack();//攻撃
-					console.log("attack");
 				}else{
 					this.player_list[i].move();//動き
 				}
