@@ -37,7 +37,7 @@ class Enemy
 					this.hp-=player[i].damage;
 					return true;
 				}else{
-					return false;	
+					return false;
 				}
 			}
 		}else{
@@ -160,7 +160,6 @@ class EnemyGenerator
 
 	generator(player)
 	{
-		console.log(enemyGenerator.enemyCastle.y);
 		//this.rd = Math.floor( Math.random() * 50);
 		this.createCastle(player);
 		this.exp++;
