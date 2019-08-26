@@ -1,3 +1,5 @@
+console.log("yes");
+
 const player1Value=200;
 const player2Value=100;
 
