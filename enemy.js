@@ -152,7 +152,7 @@ class EnemyGenerator
 	}
 
 	createCastle(player){
-		if(this.enemyCastle.hp < 0){
+		if(this.enemyCastle.hp > 0){
 			this.enemyCastle.showImage();
 			this.enemyCastle.hitJudge(player);
 			this.enemyCastle.drawHP();
